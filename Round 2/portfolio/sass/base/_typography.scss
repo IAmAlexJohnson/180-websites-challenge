@@ -4,6 +4,135 @@ body {
     font-weight: 300;
 }
 
+a {
+    text-decoration: none;
+
+    .card{
+        color: $color-secondary;
+
+        &__heading{
+            font-size: $default-font-size;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+        &__details {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+        }
+        &__date {
+            color: $color-primary;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}
+
 .header {
     font-size: $default-font-size;
+    ul{
+        line-height: 2;
+    }
 }
+
+
+.navigation {
+    color: #FFF;
+    font-size: 2rem;
+
+    a {
+        color: #FFF;
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+
+    &__link {
+        line-height: 1.6;
+    }
+    &__image-box {
+        text-align: center;
+    }
+
+    &__footer{ 
+        font-size: $default-font-size;
+        &-list--item {
+            display: inline;
+            a:hover {
+                    color: $color-primary;
+                }
+            }
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+
+.heading{
+    &-primary {
+        text-transform: uppercase;
+        font-family: 'Overlock SC', cursive;
+        text-align: center;
+        text-shadow: 2px 2px $color-primary-dark;
+        &--main{
+            display: block;
+            font-size: 4rem;
+        }
+        &--sub{
+            font-weight: 300;
+            display: block;
+            font-size: 2rem;
+        }
+    }
+    &-secondary{
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 3rem;
+    }
+    &-tertiary {
+        text-transform: uppercase;
+        font-size: 3rem;
+        color: #FFF;
+        font-weight: 300;
+        line-height: 2;
+    }
+}
+
+.attribution {
+    text-align: center;
+    font-size: 1.6em;
+    color: rgba($color-secondary, .4);
+}
+
+
+section,
+header{
+    font-size: $default-font-size;
+    line-height: 1.6;
+}
+
+footer {
+    line-height: 2;
+    text-align: center;
+    font-size: $default-font-size;
+    a{
+        color: #FFF;
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
+
+.project-list__nav {
+        text-align: center;
+        a {
+            color: $color-secondary;
+            font-weight: 400;
+            font-size: 2rem;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
