@@ -1,0 +1,111 @@
+.card{
+    height: 40rem;
+    background-color: $color-grey-light2;
+    padding: 1.6rem;
+    border-radius: 3px;
+    // margin-top: 2rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all .1s ease-in-out;
+
+    &:hover {
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    }
+    &:hover &__picture {
+        border: 2px solid rgba($color-primary, 0.4);
+    }
+
+    &__picture {
+        height:21rem;
+        background-size: 36rem;
+        border-radius: 3px;
+        background-position: center;
+
+        &--1 {
+            background-image: url(../img/computer.jpg);
+        }
+        &--2 {
+            background-image: url(../img/computer2.jpg);
+        }
+        &--3 {
+            background-image: url(../img/computer3.jpg);
+        }
+
+        &--4 {
+            background-image: url(../img/computer4.jpg);
+        }
+        &--5 {
+            background-image: url(../img/computer5.jpg);
+        }
+        &--6 {
+            background-image: url(../img/computer6.jpg);
+        }
+
+        &--7 {
+            background-image: url(../img/computer7.jpg);
+        }
+        &--8 {
+            background-image: url(../img/computer8.jpg);
+        }
+        &--9 {
+            background-image: url(../img/computer9.jpg);
+        }
+
+        &--10 {
+            background-image: url(../img/computer.jpg);
+        }
+        &--11 {
+            background-image: url(../img/computer2.jpg);
+        }
+        &--12 {
+            background-image: url(../img/computer3.jpg);
+        }
+        &--13 {
+            background-image: url(../img/computer4.jpg);
+        }
+        &--14 {
+            background-image: url(../img/computer5.jpg);
+        }
+        &--15 {
+            background-image: url(../img/computer6.jpg);
+        }
+        &--16 {
+            background-image: url(../img/computer7.jpg);
+        }
+        &--17 {
+            background-image: url(../img/computer8.jpg);
+        }
+        &--18 {
+            background-image: url(../img/computer9.jpg);
+        }
+        &--19 {
+            background-image: url(../img/computer.jpg);
+        }
+        &--20 {
+            background-image: url(../img/computer2.jpg);
+        }
+        &--21 {
+            background-image: url(../img/computer3.jpg);
+        }
+        &--22 {
+            background-image: url(../img/computer4.jpg);
+        }
+        &--23 {
+            background-image: url(../img/computer5.jpg);
+        }
+        &--24 {
+            background-image: url(../img/computer6.jpg);
+        }
+
+        
+    }
+
+    &__heading{
+        margin-top: 2rem;
+    }
+    &__details {
+        margin-top: 1rem;
+    }
+    &__date {
+        margin-top: 1rem;
+    }
+}

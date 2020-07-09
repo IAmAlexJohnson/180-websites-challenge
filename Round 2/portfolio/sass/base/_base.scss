@@ -24,9 +24,35 @@ html {
 }
 
 
-
-
 body {
     background-color: $color-grey-light;
     box-sizing: border-box;
+}
+
+header, 
+main {
+    margin-left: 20%;
+}
+
+header {
+    padding-top: 6rem;
+}
+
+main,
+section {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.heading-primary, .heading-secondary, .heading-tertiary {
+    margin-bottom: 2rem;
+}
+
+.heading-tertiary {
+    background-color: $color-secondary;
+    padding-left: 3rem;
+}
+
+.heading-quaternary {
+    margin: 1rem 0;
 }

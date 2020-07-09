@@ -1,0 +1,24 @@
+footer {
+    position: absolute;
+    left: 0; 
+    background-color: $color-secondary;
+    width: 100%;
+     .footer-list{
+         margin-left: 20%;
+        &--item {
+            display: inline;
+        }
+     }
+    
+    a{
+        margin-left: 2rem;
+    }
+
+    .footer {
+        right: 0;
+    }
+}
+
+.navigation footer {
+    bottom:0;
+}

@@ -1,0 +1,28 @@
+.project-list {
+    -moz-column-count: 4;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 20px;
+    column-count: 4;
+    column-gap: 20px;
+    margin-top: 2rem;
+
+    &__nav {
+        list-style: none;
+        &--item {
+            display: inline;
+            margin-left: 2rem;
+        }
+    }
+
+    a {
+        color: $color-primary;
+        &:visited {
+            color: $color-primary-dark2;
+        }
+        &:hover {
+            color: $color-primary-dark;
+        }
+        
+    }
+}

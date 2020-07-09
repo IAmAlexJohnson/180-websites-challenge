@@ -1,0 +1,33 @@
+.navigation {
+    float: left;
+    height:100%;
+    width: 20%;
+    background-color: $color-primary;
+    position: fixed;
+    border-top: 1rem solid $color-secondary;
+    box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+
+    &__item {
+        margin-left: 2rem;
+    }
+
+    &__image {
+        margin-top: 2rem;
+        border-radius: 50%;
+        width: 70%;
+        box-shadow: 2px 2px 0px #BB4430, 5px 5px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    &__footer-list--item {
+        display: inline;
+        a {
+            margin-left: 2rem;
+        }
+    }
+
+    ul {
+        list-style: none;
+    }
+
+}
