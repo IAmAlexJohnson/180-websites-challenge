@@ -49,10 +49,15 @@ section {
 }
 
 .heading-tertiary {
-    background-color: $color-secondary;
+     // TEXTURE BY: Peax. http://www.peax-webdesign.com/
+    background-image: url(../../img/texture2.png);
     padding-left: 3rem;
 }
 
 .heading-quaternary {
     margin: 1rem 0;
+}
+
+.paragraph {
+    margin: 1.6rem 0;
 }

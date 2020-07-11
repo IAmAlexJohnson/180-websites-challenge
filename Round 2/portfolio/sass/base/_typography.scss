@@ -39,6 +39,7 @@ a {
 .navigation {
     color: #FFF;
     font-size: 2rem;
+    font-weight: 500;
 
     a {
         color: #FFF;
@@ -49,6 +50,19 @@ a {
 
     &__link {
         line-height: 1.6;
+        text-shadow: 2px 2px 2px $color-primary, 2px 2px 2px #000;
+
+        &:hover {
+            text-shadow: 2px 2px 2px rgba($color-primary, 0.5);
+        }
+
+        &--active{
+            color: rgb(194, 194, 194) !important;
+        }
+
+        // &--sub {
+        //     font-weight: 500;
+        // }
     }
     &__image-box {
         text-align: center;
@@ -67,7 +81,9 @@ a {
     footer {
         text-align: center;
     }
+
 }
+
 
 
 .heading{
@@ -75,7 +91,7 @@ a {
         text-transform: uppercase;
         font-family: 'Overlock SC', cursive;
         text-align: center;
-        text-shadow: 2px 2px $color-primary-dark;
+        text-shadow: 2px 2px 2px $color-primary, 2px 2px 2px #000;
         &--main{
             display: block;
             font-size: 4rem;
@@ -136,3 +152,8 @@ footer {
             }
         }
     }
+
+
+.paragraph {
+    line-height: 1.8;
+}

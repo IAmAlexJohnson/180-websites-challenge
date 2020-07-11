@@ -3,8 +3,12 @@
     height:100%;
     width: 20%;
     background-color: $color-primary;
+    // #D33E41
+    // TEXTURE BY: Atle Mo. https://atlemo.com/
+    background-image: linear-gradient(to bottom, rgba(#e44245, 0.7), rgba(#e44245, 0.6)), url(../../img/congruent_outline.png);
+    background-repeat:repeat;
+    
     position: fixed;
-    border-top: 1rem solid $color-secondary;
     box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.1);
     z-index: 9999;
 
@@ -13,10 +17,48 @@
     }
 
     &__image {
-        margin-top: 2rem;
+        margin: 2rem auto 0;
         border-radius: 50%;
-        width: 70%;
+        width: 60%;
+        max-height: 220px;
+        height: 220px;
+        // border: 1px solid rgba(0, 0, 0, 0.589);
         box-shadow: 2px 2px 0px #BB4430, 5px 5px 0px rgba(0, 0, 0, 0.1);
+        background-image: url(../../img/Alex-Johnson2-sm.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: all .2s ease-in-out;
+
+
+        &:hover {
+            background-image: url(../../img/Alex-Johnson2-distort-sm.png);
+        }
+    }
+    &__close {
+        position: absolute;
+        background: #000;
+        background-image: url(../../img/texture2.png);
+        padding: .7rem 1.2rem;
+        right: -1rem;
+        top: 55rem;
+        box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.1);
+        
+
+        &:hover {
+            // color: #f7f7f7;
+            right: -.8rem;
+
+            cursor: pointer;
+            box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.2);
+            
+        }
+
+        &:active {
+            top: 1px;
+            top: 55.1rem;
+        }
+        
     }
 
     &__footer-list--item {
@@ -26,8 +68,47 @@
         }
     }
 
+
     ul {
         list-style: none;
+        padding-left: 1rem;
+
+        .navigation__link{
+                width: 100%;
+                transition: all .2s ease-in;
+        
+                &:hover {
+                    padding-left: 2rem;
+                }
+        
+                &--active{
+                    &::before {
+                        content: "- ";
+                    }
+                }
+            
+                &--sub:hover{ 
+                        padding-left: 4rem;
+                    }
+                    
+                }  
+        }
+    
+
+    &__list--sub{
+        margin-left: 3rem;
     }
 
+    
+
+    &::before {
+        content: "";
+        display: block;
+        height: 1rem;
+        width: 100%;
+
+        // TEXTURE BY: Peax. http://www.peax-webdesign.com/
+        background: #000;
+        background-image: url(../../img/texture2.png);
+    }
 }

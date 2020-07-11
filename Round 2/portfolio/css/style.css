@@ -52,11 +52,14 @@ section {
   margin-bottom: 2rem; }
 
 .heading-tertiary {
-  background-color: #231E20;
+  background-image: url(../../img/texture2.png);
   padding-left: 3rem; }
 
 .heading-quaternary {
   margin: 1rem 0; }
+
+.paragraph {
+  margin: 1.6rem 0; }
 
 body {
   color: #231E20;
@@ -87,13 +90,19 @@ a {
 
 .navigation {
   color: #FFF;
-  font-size: 2rem; }
+  font-size: 2rem;
+  font-weight: 500; }
   .navigation a {
     color: #FFF; }
     .navigation a:hover {
       color: #231E20; }
   .navigation__link {
-    line-height: 1.6; }
+    line-height: 1.6;
+    text-shadow: 2px 2px 2px #D33E41, 2px 2px 2px #000; }
+    .navigation__link:hover {
+      text-shadow: 2px 2px 2px rgba(211, 62, 65, 0.5); }
+    .navigation__link--active {
+      color: #c2c2c2 !important; }
   .navigation__image-box {
     text-align: center; }
   .navigation__footer {
@@ -109,7 +118,7 @@ a {
   text-transform: uppercase;
   font-family: 'Overlock SC', cursive;
   text-align: center;
-  text-shadow: 2px 2px #A12F31; }
+  text-shadow: 2px 2px 2px #D33E41, 2px 2px 2px #000; }
   .heading-primary--main {
     display: block;
     font-size: 4rem; }
@@ -157,6 +166,9 @@ footer {
     font-size: 2rem; }
     .project-list__nav a:hover {
       color: #D33E41; }
+
+.paragraph {
+  line-height: 1.8; }
 
 .u-center-text {
   text-align: center !important; }
@@ -256,7 +268,7 @@ footer {
 footer {
   position: absolute;
   left: 0;
-  background-color: #231E20;
+  background-image: url(../../img/texture2.png);
   width: 100%; }
   footer .footer-list {
     margin-left: 20%; }
@@ -295,23 +307,67 @@ footer {
   height: 100%;
   width: 20%;
   background-color: #D33E41;
+  background-image: linear-gradient(to bottom, rgba(228, 66, 69, 0.7), rgba(228, 66, 69, 0.6)), url(../../img/congruent_outline.png);
+  background-repeat: repeat;
   position: fixed;
-  border-top: 1rem solid #231E20;
   box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.1);
   z-index: 9999; }
   .navigation__item {
     margin-left: 2rem; }
   .navigation__image {
-    margin-top: 2rem;
+    margin: 2rem auto 0;
     border-radius: 50%;
-    width: 70%;
-    box-shadow: 2px 2px 0px #BB4430, 5px 5px 0px rgba(0, 0, 0, 0.1); }
+    width: 60%;
+    max-height: 220px;
+    height: 220px;
+    box-shadow: 2px 2px 0px #BB4430, 5px 5px 0px rgba(0, 0, 0, 0.1);
+    background-image: url(../../img/Alex-Johnson2-sm.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    transition: all .2s ease-in-out; }
+    .navigation__image:hover {
+      background-image: url(../../img/Alex-Johnson2-distort-sm.png); }
+  .navigation__close {
+    position: absolute;
+    background: #000;
+    background-image: url(../../img/texture2.png);
+    padding: .7rem 1.2rem;
+    right: -1rem;
+    top: 55rem;
+    box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.1); }
+    .navigation__close:hover {
+      right: -.8rem;
+      cursor: pointer;
+      box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.2); }
+    .navigation__close:active {
+      top: 1px;
+      top: 55.1rem; }
   .navigation__footer-list--item {
     display: inline; }
     .navigation__footer-list--item a {
       margin-left: 2rem; }
   .navigation ul {
-    list-style: none; }
+    list-style: none;
+    padding-left: 1rem; }
+    .navigation ul .navigation__link {
+      width: 100%;
+      transition: all .2s ease-in; }
+      .navigation ul .navigation__link:hover {
+        padding-left: 2rem; }
+      .navigation ul .navigation__link--active::before {
+        content: "- "; }
+      .navigation ul .navigation__link--sub:hover {
+        padding-left: 4rem; }
+  .navigation__list--sub {
+    margin-left: 3rem; }
+  .navigation::before {
+    content: "";
+    display: block;
+    height: 1rem;
+    width: 100%;
+    background: #000;
+    background-image: url(../../img/texture2.png); }
 
 .row {
   max-width: 114rem;
