@@ -32,16 +32,21 @@ body {
 header, 
 main {
     margin-left: 20%;
+
+    @include respond(tab-land){ margin-left: 0rem}
 }
 
 header {
     padding-top: 6rem;
+
+    @include respond(tab-land){ padding-top: 18rem}
 }
 
 main,
 section {
     margin-top: 6rem;
     margin-bottom: 6rem;
+    
 }
 
 .heading-primary, .heading-secondary, .heading-tertiary {

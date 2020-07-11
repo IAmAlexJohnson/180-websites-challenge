@@ -11,6 +11,70 @@
     position: fixed;
     box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.1);
     z-index: 9999;
+    
+    .fullscreen{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom:0;
+    }
+
+    &__hamburger-menu {
+        cursor: pointer;
+        width: 3rem;
+        height: .3rem;
+        background-color: #FFF;
+        position: absolute;
+        top: 5.5rem;
+        right: 6rem;
+
+        &::after, &::before {
+            content: "";
+            width: 3rem;
+            height: .3rem;
+            background-color: #FFF;
+            display: block;
+            position: relative;
+        }
+        &::after {
+            top: -1.25rem;
+            right: 0rem;
+        }
+        &::before {
+            top: 1rem;
+            right: 0rem;
+        }
+
+        &:hover, &:hover::after, &:hover::before{
+            background-color: $color-secondary;
+        }
+
+        
+    }
+
+    @include respond(desktop){ 
+        .hidden-lg {
+            position: absolute;
+            left: 9999rem !important;
+        }
+    }
+    
+
+    @include respond(tab-land){ 
+        height: 12rem;
+        width: 100%;
+        
+    }
+
+    @include respond(tab-land){ 
+        &__nav {
+            .row {
+                margin-bottom: -1rem !important;
+            }
+        }
+        
+    }
 
     &__item {
         margin-left: 2rem;
@@ -19,6 +83,7 @@
     &__image {
         margin: 2rem auto 0;
         border-radius: 50%;
+        max-width: 220px;
         width: 60%;
         max-height: 220px;
         height: 220px;
@@ -31,34 +96,36 @@
         transition: all .2s ease-in-out;
 
 
-        &:hover {
-            background-image: url(../../img/Alex-Johnson2-distort-sm.png);
-        }
-    }
-    &__close {
-        position: absolute;
-        background: #000;
-        background-image: url(../../img/texture2.png);
-        padding: .7rem 1.2rem;
-        right: -1rem;
-        top: 55rem;
-        box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.1);
-        
-
-        &:hover {
-            // color: #f7f7f7;
-            right: -.8rem;
-
-            cursor: pointer;
-            box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.2);
+        @include respond(tab-land){ 
+            height:9rem;
+            width: 9rem;
+            float: left;
+            position: relative;
+            bottom: 15px;
             
         }
+    
 
-        &:active {
-            top: 1px;
-            top: 55.1rem;
+
+        &:hover {
+            background-image: url(../../img/Alex-Johnson2-distort-sm2.png);
         }
+    }
+
+    &__link--active{
+            padding-left:2rem;
+
+            &:hover {
+                padding-left: 3rem;
+            }
+        }
+
+    @include respond(tab-land){ 
         
+        footer {
+            display: none;
+        
+        }
     }
 
     &__footer-list--item {
@@ -73,26 +140,25 @@
         list-style: none;
         padding-left: 1rem;
 
+        @include respond(tab-land){ 
+            display: none;
+        
+        }
+
         .navigation__link{
                 width: 100%;
                 transition: all .2s ease-in;
         
                 &:hover {
-                    padding-left: 2rem;
+                    padding-left: 1rem;
                 }
-        
-                &--active{
-                    &::before {
-                        content: "- ";
-                    }
-                }
-            
+
                 &--sub:hover{ 
-                        padding-left: 4rem;
+                        padding-left: 2rem;
                     }
                     
                 }  
-        }
+    }
     
 
     &__list--sub{
@@ -110,5 +176,23 @@
         // TEXTURE BY: Peax. http://www.peax-webdesign.com/
         background: #000;
         background-image: url(../../img/texture2.png);
+    
     }
-}
+
+    @include respond(tab-land){ 
+        &::after {
+            content: "";
+            display: block;
+            height: 1rem;
+            width: 100%;
+    
+            // TEXTURE BY: Peax. http://www.peax-webdesign.com/
+            background: #000;
+            background-image: url(../../img/texture2.png);
+        }
+        
+    } //INCLUDE
+
+
+
+} //NAVIGATION

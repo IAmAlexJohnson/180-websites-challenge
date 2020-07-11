@@ -57,12 +57,16 @@ a {
         }
 
         &--active{
-            color: rgb(194, 194, 194) !important;
+            color: rgb(209, 155, 155) !important;
         }
 
         // &--sub {
         //     font-weight: 500;
         // }
+    }
+
+    &__list--sub {
+        font-size: 1.6rem;
     }
     &__image-box {
         text-align: center;
@@ -92,6 +96,12 @@ a {
         font-family: 'Overlock SC', cursive;
         text-align: center;
         text-shadow: 2px 2px 2px $color-primary, 2px 2px 2px #000;
+        position: relative;
+        @include respond(tab-land){ 
+            @include absCenter;
+        
+        }
+
         &--main{
             display: block;
             font-size: 4rem;
@@ -127,6 +137,13 @@ section,
 header{
     font-size: $default-font-size;
     line-height: 1.6;
+
+    a:visited {
+        color: $color-primary-dark2;
+    }
+    a:hover {
+        color: $color-primary;
+    }
 }
 
 footer {
@@ -143,13 +160,15 @@ footer {
 
 .project-list__nav {
         text-align: center;
-        a {
-            color: $color-secondary;
+        &--item {
+           a {
+            color: $color-secondary !important;
             font-weight: 400;
             font-size: 2rem;
             &:hover {
-                color: $color-primary;
+                color: $color-primary !important;
             }
+           }
         }
     }
 

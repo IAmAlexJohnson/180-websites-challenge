@@ -39,9 +39,16 @@ body {
 header,
 main {
   margin-left: 20%; }
+  @media only screen and (max-width: 75em) {
+    header,
+    main {
+      margin-left: 0rem; } }
 
 header {
   padding-top: 6rem; }
+  @media only screen and (max-width: 75em) {
+    header {
+      padding-top: 18rem; } }
 
 main,
 section {
@@ -102,7 +109,9 @@ a {
     .navigation__link:hover {
       text-shadow: 2px 2px 2px rgba(211, 62, 65, 0.5); }
     .navigation__link--active {
-      color: #c2c2c2 !important; }
+      color: #d19b9b !important; }
+  .navigation__list--sub {
+    font-size: 1.6rem; }
   .navigation__image-box {
     text-align: center; }
   .navigation__footer {
@@ -118,7 +127,14 @@ a {
   text-transform: uppercase;
   font-family: 'Overlock SC', cursive;
   text-align: center;
-  text-shadow: 2px 2px 2px #D33E41, 2px 2px 2px #000; }
+  text-shadow: 2px 2px 2px #D33E41, 2px 2px 2px #000;
+  position: relative; }
+  @media only screen and (max-width: 75em) {
+    .heading-primary {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); } }
   .heading-primary--main {
     display: block;
     font-size: 4rem; }
@@ -148,6 +164,12 @@ section,
 header {
   font-size: 1.6rem;
   line-height: 1.6; }
+  section a:visited,
+  header a:visited {
+    color: #5f0b0c; }
+  section a:hover,
+  header a:hover {
+    color: #D33E41; }
 
 footer {
   line-height: 2;
@@ -160,12 +182,12 @@ footer {
 
 .project-list__nav {
   text-align: center; }
-  .project-list__nav a {
-    color: #231E20;
+  .project-list__nav--item a {
+    color: #231E20 !important;
     font-weight: 400;
     font-size: 2rem; }
-    .project-list__nav a:hover {
-      color: #D33E41; }
+    .project-list__nav--item a:hover {
+      color: #D33E41 !important; }
 
 .paragraph {
   line-height: 1.8; }
@@ -295,12 +317,6 @@ footer {
     .project-list__nav--item {
       display: inline;
       margin-left: 2rem; }
-  .project-list a {
-    color: #D33E41; }
-    .project-list a:visited {
-      color: #5f0b0c; }
-    .project-list a:hover {
-      color: #A12F31; }
 
 .navigation {
   float: left;
@@ -312,11 +328,52 @@ footer {
   position: fixed;
   box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.1);
   z-index: 9999; }
+  .navigation .fullscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .navigation__hamburger-menu {
+    cursor: pointer;
+    width: 3rem;
+    height: .3rem;
+    background-color: #FFF;
+    position: absolute;
+    top: 5.5rem;
+    right: 6rem; }
+    .navigation__hamburger-menu::after, .navigation__hamburger-menu::before {
+      content: "";
+      width: 3rem;
+      height: .3rem;
+      background-color: #FFF;
+      display: block;
+      position: relative; }
+    .navigation__hamburger-menu::after {
+      top: -1.25rem;
+      right: 0rem; }
+    .navigation__hamburger-menu::before {
+      top: 1rem;
+      right: 0rem; }
+    .navigation__hamburger-menu:hover, .navigation__hamburger-menu:hover::after, .navigation__hamburger-menu:hover::before {
+      background-color: #231E20; }
+  @media only screen and (min-width: 75.1em) {
+    .navigation .hidden-lg {
+      position: absolute;
+      left: 9999rem !important; } }
+  @media only screen and (max-width: 75em) {
+    .navigation {
+      height: 12rem;
+      width: 100%; } }
+  @media only screen and (max-width: 75em) {
+    .navigation__nav .row {
+      margin-bottom: -1rem !important; } }
   .navigation__item {
     margin-left: 2rem; }
   .navigation__image {
     margin: 2rem auto 0;
     border-radius: 50%;
+    max-width: 220px;
     width: 60%;
     max-height: 220px;
     height: 220px;
@@ -326,23 +383,22 @@ footer {
     background-position: center;
     background-size: 100%;
     transition: all .2s ease-in-out; }
+    @media only screen and (max-width: 75em) {
+      .navigation__image {
+        height: 9rem;
+        width: 9rem;
+        float: left;
+        position: relative;
+        bottom: 15px; } }
     .navigation__image:hover {
-      background-image: url(../../img/Alex-Johnson2-distort-sm.png); }
-  .navigation__close {
-    position: absolute;
-    background: #000;
-    background-image: url(../../img/texture2.png);
-    padding: .7rem 1.2rem;
-    right: -1rem;
-    top: 55rem;
-    box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.1); }
-    .navigation__close:hover {
-      right: -.8rem;
-      cursor: pointer;
-      box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.2); }
-    .navigation__close:active {
-      top: 1px;
-      top: 55.1rem; }
+      background-image: url(../../img/Alex-Johnson2-distort-sm2.png); }
+  .navigation__link--active {
+    padding-left: 2rem; }
+    .navigation__link--active:hover {
+      padding-left: 3rem; }
+  @media only screen and (max-width: 75em) {
+    .navigation footer {
+      display: none; } }
   .navigation__footer-list--item {
     display: inline; }
     .navigation__footer-list--item a {
@@ -350,15 +406,16 @@ footer {
   .navigation ul {
     list-style: none;
     padding-left: 1rem; }
+    @media only screen and (max-width: 75em) {
+      .navigation ul {
+        display: none; } }
     .navigation ul .navigation__link {
       width: 100%;
       transition: all .2s ease-in; }
       .navigation ul .navigation__link:hover {
-        padding-left: 2rem; }
-      .navigation ul .navigation__link--active::before {
-        content: "- "; }
+        padding-left: 1rem; }
       .navigation ul .navigation__link--sub:hover {
-        padding-left: 4rem; }
+        padding-left: 2rem; }
   .navigation__list--sub {
     margin-left: 3rem; }
   .navigation::before {
@@ -368,6 +425,14 @@ footer {
     width: 100%;
     background: #000;
     background-image: url(../../img/texture2.png); }
+  @media only screen and (max-width: 75em) {
+    .navigation::after {
+      content: "";
+      display: block;
+      height: 1rem;
+      width: 100%;
+      background: #000;
+      background-image: url(../../img/texture2.png); } }
 
 .row {
   max-width: 114rem;
