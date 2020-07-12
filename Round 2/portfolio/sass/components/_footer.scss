@@ -6,6 +6,9 @@ footer {
     width: 100%;
      .footer-list{
          margin-left: 20%;
+         @include respond(tab-land){ 
+            margin-left: 0%;
+         }
         &--item {
             display: inline;
         }
@@ -20,6 +23,10 @@ footer {
     }
 }
 
-.navigation footer {
-    bottom:0;
+.navigation__footer {
+     bottom:0;
+      &-list {
+        padding: 0 1.5rem 0 0 !important;
+       }
 }
+

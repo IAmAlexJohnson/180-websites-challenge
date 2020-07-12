@@ -5,55 +5,26 @@
     background-color: $color-primary;
     // #D33E41
     // TEXTURE BY: Atle Mo. https://atlemo.com/
-    background-image: linear-gradient(to bottom, rgba(#e44245, 0.7), rgba(#e44245, 0.6)), url(../../img/congruent_outline.png);
+    background-image: linear-gradient(to bottom, rgba(#e44245, 0.6), rgba(#e44245, 0.6)), url(../../img/congruent_outline.png);
     background-repeat:repeat;
     
     position: fixed;
     box-shadow: 5px 0px 0px rgba(0, 0, 0, 0.1);
     z-index: 9999;
-    
-    .fullscreen{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom:0;
+
+
+    &__checkbox{
+        display: none;
+    }
+    &__button{
+        z-index: 1;
+        position: fixed;
+        right:99999rem;
     }
 
-    &__hamburger-menu {
-        cursor: pointer;
-        width: 3rem;
-        height: .3rem;
-        background-color: #FFF;
-        position: absolute;
-        top: 5.5rem;
-        right: 6rem;
-
-        &::after, &::before {
-            content: "";
-            width: 3rem;
-            height: .3rem;
-            background-color: #FFF;
-            display: block;
-            position: relative;
-        }
-        &::after {
-            top: -1.25rem;
-            right: 0rem;
-        }
-        &::before {
-            top: 1rem;
-            right: 0rem;
-        }
-
-        &:hover, &:hover::after, &:hover::before{
-            background-color: $color-secondary;
-        }
-
-        
-    }
 
     @include respond(desktop){ 
+        width: 25%;
         .hidden-lg {
             position: absolute;
             left: 9999rem !important;
@@ -64,30 +35,148 @@
     @include respond(tab-land){ 
         height: 12rem;
         width: 100%;
-        
-    }
 
-    @include respond(tab-land){ 
+        &::after {
+            content: "";
+            display: block;
+            height: 1rem;
+            width: 100%;
+            position: relative;
+            top: 8.8rem;
+    
+            // TEXTURE BY: Peax. http://www.peax-webdesign.com/
+            background: #000;
+            background-image: url(../../img/texture2.png);
+        }
+        
         &__nav {
+            height: 100vh;
+            position: fixed;
+            top:0;
+            left: 0;
+            z-index:1500;
+
+            opacity: 0;
+            width:0;
+            transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+
+            &__list {
+                position: absolute;
+                @include absCenter;
+                list-style:none;
+                text-align: center;
+                width: 100%;
+            }
+        
+            &__item{
+                margin: 1rem;
+            }
+        
+            &__link{
+                &:link,
+                &:visited{
+                    display:inline-block;
+                    font-size: 3rem;
+                    font-weight: 300;
+                    padding: 1rem 2rem;
+                    color: $color-white;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+                    background-size: 220%;
+                    transition: all .4s;
+        
+                    span {
+                        margin-right: 1.5rem;
+                        display: inline-block;
+                    }
+                }
+        
+                &:hover,
+                &active {
+                    background-position: 100%;
+                    color: $color-primary;
+                    transform: translateX(1rem);
+                }
+        
+            }
+   
             .row {
                 margin-bottom: -1rem !important;
             }
         }
         
+        &__button{
+            background-color: $color-white;
+            height:7rem;
+            width: 7rem;
+            border-radius: 50%;
+            position: fixed;
+            top: 3rem;
+            right:5rem;
+            z-index: 2000;
+            box-shadow: 0 1rem 3rem rgba($color-black, .1);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        footer {
+            display: none;
+        
+        }
+    } // INCLUDE
+
+    .heading-primary{
+        border-bottom: 2px solid rgba($color-white, 0.8);
+        padding-bottom: 1.6rem;
     }
 
-    &__item {
-        margin-left: 2rem;
+    &__link{
+        &:link,
+        &:visited{
+            display:inline-block;
+            width: 100%;
+            font-size: 2rem;
+            font-weight: 400;
+            padding: 1rem 2rem;
+            color: $color-white;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+            background-size: 220%;
+            transition: all .4s;
+
+            span {
+                margin-right: 1.5rem;
+                display: inline-block;
+            }
+        }
+
+        &:hover,
+        &active {
+            background-position: 100%;
+            color: $color-primary;
+            transform: translateX(1rem);
+        }
+
     }
+
+
+
+
+    &__list {
+        padding: 0 !important;
+    }
+    
 
     &__image {
         margin: 2rem auto 0;
         border-radius: 50%;
-        max-width: 220px;
-        width: 60%;
-        max-height: 220px;
-        height: 220px;
-        // border: 1px solid rgba(0, 0, 0, 0.589);
+   
+        height: 20rem;
+        width: 20rem;
+
         box-shadow: 2px 2px 0px #BB4430, 5px 5px 0px rgba(0, 0, 0, 0.1);
         background-image: url(../../img/Alex-Johnson2-sm.png);
         background-repeat: no-repeat;
@@ -95,6 +184,12 @@
         background-size: 100%;
         transition: all .2s ease-in-out;
 
+
+        @include respond(desktop){
+            position: relative;
+            height: 18rem;
+            width: 18rem;
+         }
 
         @include respond(tab-land){ 
             height:9rem;
@@ -105,28 +200,15 @@
             
         }
     
-
-
         &:hover {
             background-image: url(../../img/Alex-Johnson2-distort-sm2.png);
         }
     }
 
     &__link--active{
-            padding-left:2rem;
-
-            &:hover {
-                padding-left: 3rem;
-            }
+          
         }
 
-    @include respond(tab-land){ 
-        
-        footer {
-            display: none;
-        
-        }
-    }
 
     &__footer-list--item {
         display: inline;
@@ -178,21 +260,5 @@
         background-image: url(../../img/texture2.png);
     
     }
-
-    @include respond(tab-land){ 
-        &::after {
-            content: "";
-            display: block;
-            height: 1rem;
-            width: 100%;
-    
-            // TEXTURE BY: Peax. http://www.peax-webdesign.com/
-            background: #000;
-            background-image: url(../../img/texture2.png);
-        }
-        
-    } //INCLUDE
-
-
 
 } //NAVIGATION

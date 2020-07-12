@@ -33,6 +33,7 @@ header,
 main {
     margin-left: 20%;
 
+    @include respond(desktop){ margin-left: 25%}
     @include respond(tab-land){ margin-left: 0rem}
 }
 
@@ -49,11 +50,15 @@ section {
     
 }
 
-.heading-primary, .heading-secondary, .heading-tertiary {
+.heading-primary,.heading-secondary {
     margin-bottom: 2rem;
 }
 
-.heading-tertiary {
+
+
+ .heading-tertiary {
+    margin-bottom: 3rem;
+
      // TEXTURE BY: Peax. http://www.peax-webdesign.com/
     background-image: url(../../img/texture2.png);
     padding-left: 3rem;
@@ -66,3 +71,5 @@ section {
 .paragraph {
     margin: 1.6rem 0;
 }
+
+
