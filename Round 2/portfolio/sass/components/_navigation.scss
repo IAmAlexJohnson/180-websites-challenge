@@ -22,6 +22,151 @@
         right:99999rem;
     }
 
+    .heading-primary{
+        border-bottom: 2px solid rgba($color-white, 0.8);
+        padding-bottom: 1.6rem;
+    }
+
+    &--animated {
+        opacity: 0;
+        animation: moveInTop .5s ease-out .75s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+
+        &2{
+            animation: moveInTop2 .5s ease-out .75s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+        }
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    &__link{
+        &:link,
+        &:visited{
+            display:inline-block;
+            width: 100%;
+            font-size: 2rem;
+            font-weight: 400;
+            padding: 1rem 2rem;
+            color: $color-white;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+            background-size: 220%;
+            transition: all .4s;
+
+            
+            padding-left: 1rem;
+
+                @include respond(tab-land){ 
+                    display: none;
+                }
+
+                &:hover {
+                    padding-left: 1rem;
+                }
+                
+                
+
+                span {
+                    margin-right: 1.5rem;
+                    display: inline-block;
+                }
+
+            
+            }
+
+        &:hover,
+        &active {
+            background-position: 100%;
+            color: $color-primary;
+            transform: translateX(1rem);
+        }
+
+        &--sub {
+            margin-left: 4rem;
+            width: 70% !important;
+            
+            
+
+            &:hover{ 
+                padding-left: 2rem;
+            }
+        }
+
+    }
+
+
+
+
+    &__list {
+        padding: 0 !important;
+    }
+    
+
+    &__image {
+        margin: 2rem auto 0;
+        border-radius: 50%;
+   
+        height: 20rem;
+        width: 20rem;
+
+        box-shadow: 2px 2px 0px #BB4430, 5px 5px 0px rgba(0, 0, 0, 0.1);
+        background-image: url(../../img/Alex-Johnson2-sm.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: all .2s ease-in-out;
+
+
+        @include respond(desktop){
+            position: relative;
+            height: 18rem;
+            width: 18rem;
+         }
+
+        @include respond(tab-land){ 
+            height:9rem;
+            width: 9rem;
+            float: left;
+            position: relative;
+            bottom: 15px;
+            
+        }
+    
+        &:hover {
+            background-image: url(../../img/Alex-Johnson2-distort-sm2.png);
+        }
+    }
+
+
+    &__footer-list--item {
+        display: inline;
+        a {
+            margin-left: 2rem;
+        }
+    }
+    
+
+    &::before {
+        content: "";
+        display: block;
+        height: 1rem;
+        width: 100%;
+
+        // TEXTURE BY: Peax. http://www.peax-webdesign.com/
+        background: #000;
+        background-image: url(../../img/texture2.png);
+    
+    }
+
+
+
+
 
     @include respond(desktop){ 
         width: 25%;
@@ -126,139 +271,5 @@
         
         }
     } // INCLUDE
-
-    .heading-primary{
-        border-bottom: 2px solid rgba($color-white, 0.8);
-        padding-bottom: 1.6rem;
-    }
-
-    &__link{
-        &:link,
-        &:visited{
-            display:inline-block;
-            width: 100%;
-            font-size: 2rem;
-            font-weight: 400;
-            padding: 1rem 2rem;
-            color: $color-white;
-            text-decoration: none;
-            text-transform: uppercase;
-            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
-            background-size: 220%;
-            transition: all .4s;
-
-            span {
-                margin-right: 1.5rem;
-                display: inline-block;
-            }
-        }
-
-        &:hover,
-        &active {
-            background-position: 100%;
-            color: $color-primary;
-            transform: translateX(1rem);
-        }
-
-    }
-
-
-
-
-    &__list {
-        padding: 0 !important;
-    }
-    
-
-    &__image {
-        margin: 2rem auto 0;
-        border-radius: 50%;
-   
-        height: 20rem;
-        width: 20rem;
-
-        box-shadow: 2px 2px 0px #BB4430, 5px 5px 0px rgba(0, 0, 0, 0.1);
-        background-image: url(../../img/Alex-Johnson2-sm.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-        transition: all .2s ease-in-out;
-
-
-        @include respond(desktop){
-            position: relative;
-            height: 18rem;
-            width: 18rem;
-         }
-
-        @include respond(tab-land){ 
-            height:9rem;
-            width: 9rem;
-            float: left;
-            position: relative;
-            bottom: 15px;
-            
-        }
-    
-        &:hover {
-            background-image: url(../../img/Alex-Johnson2-distort-sm2.png);
-        }
-    }
-
-    &__link--active{
-          
-        }
-
-
-    &__footer-list--item {
-        display: inline;
-        a {
-            margin-left: 2rem;
-        }
-    }
-
-
-    ul {
-        list-style: none;
-        padding-left: 1rem;
-
-        @include respond(tab-land){ 
-            display: none;
-        
-        }
-
-        .navigation__link{
-                width: 100%;
-                transition: all .2s ease-in;
-        
-                &:hover {
-                    padding-left: 1rem;
-                }
-
-                &--sub:hover{ 
-                        padding-left: 2rem;
-                    }
-                    
-                }  
-    }
-    
-
-    &__list--sub{
-        margin-left: 3rem;
-    }
-
-    
-
-    &::before {
-        content: "";
-        display: block;
-        height: 1rem;
-        width: 100%;
-
-        // TEXTURE BY: Peax. http://www.peax-webdesign.com/
-        background: #000;
-        background-image: url(../../img/texture2.png);
-    
-    }
 
 } //NAVIGATION

@@ -1,0 +1,47 @@
+.blog {
+    height: 40rem;
+    background-color: $color-grey-light2;
+    padding: 1.6rem;
+    border-radius: 3px;
+    // margin-top: 2rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all .1s ease-in-out;
+
+
+    &:hover {
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    }
+    &:hover &__picture {
+        border: 2px solid rgba($color-primary, 0.4);
+    }
+
+    &__picture {
+        height:21rem;
+        background-size: 36rem;
+        border-radius: 3px;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &--1 {
+            background-image: url(../img/blog1.jpg);
+        }
+        &--2 {
+            background-image: url(../img/blog2.jpg);
+        }
+        &--3 {
+            background-image: url(../img/blog3.jpg);
+        }
+
+
+    }
+
+    &__heading{
+        margin-top: 2rem;
+    }
+    &__details {
+        margin-top: 1rem;
+    }
+    &__date {
+        margin-top: 1rem;
+    }
+}
