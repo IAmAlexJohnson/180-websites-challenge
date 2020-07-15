@@ -33,14 +33,16 @@ header,
 main {
     margin-left: 20%;
 
-    @include respond(desktop){ margin-left: 25%}
-    @include respond(tab-land){ margin-left: 0rem}
+    @include respond(desktop){ margin-left: 25%;}
+    @include respond(tab-land){ margin-left: 0rem;}
+    @include respond(max-height){ margin-left: 0rem;}
 }
 
 header {
     padding-top: 6rem;
 
-    @include respond(tab-land){ padding-top: 18rem}
+    @include respond(tab-land){ padding-top: 18rem;}
+    @include respond(max-height){ padding-top: 18rem;}
 }
 
 main,
