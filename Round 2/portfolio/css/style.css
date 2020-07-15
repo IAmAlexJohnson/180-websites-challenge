@@ -156,13 +156,6 @@ a {
   @media only screen and (min-width: 75.1em) {
     .heading-primary {
       margin-top: 2rem; } }
-  @media only screen and (max-width: 75em) {
-    .heading-primary {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      top: 15rem; } }
   .heading-primary--main {
     display: block;
     font-size: 4rem; }
@@ -249,6 +242,10 @@ footer {
 
 .u-margin-top-huge {
   margin-top: 10rem !important; }
+
+@media only screen and (max-height: 25em) {
+  .u-margin-bottom-none {
+    margin-bottom: 0 !important; } }
 
 .card {
   height: 40rem;
@@ -361,6 +358,9 @@ footer {
     @media only screen and (max-width: 75em) {
       footer .footer-list {
         margin-left: 0%; } }
+    @media only screen and (max-height: 43.75em) {
+      footer .footer-list {
+        margin-left: 0%; } }
     footer .footer-list--item {
       display: inline; }
   footer a {
@@ -406,15 +406,46 @@ footer {
   .navigation .heading-primary {
     border-bottom: 2px solid rgba(255, 255, 255, 0.8);
     padding-bottom: 1.6rem; }
+    @media only screen and (min-width: 75.1em) {
+      .navigation .heading-primary {
+        margin-top: 2rem; } }
+    @media only screen and (max-width: 75em) {
+      .navigation .heading-primary {
+        width: 80%;
+        margin: 0 auto; } }
   .navigation--animated {
     opacity: 0;
     animation: moveInTop .5s ease-out .75s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1; }
+    @media only screen and (max-width: 37.5em) {
+      .navigation--animated {
+        animation-play-state: paused; } }
+    @media only screen and (max-height: 43.75em) {
+      .navigation--animated {
+        animation-play-state: paused; } }
+    @media only screen and (max-width: 75em) {
+      .navigation--animated {
+        animation-play-state: paused; } }
     .navigation--animated2 {
       animation: moveInTop2 .5s ease-out .75s;
       animation-fill-mode: forwards;
       animation-iteration-count: 1; }
+      @media only screen and (max-width: 37.5em) {
+        .navigation--animated2 {
+          animation-play-state: paused;
+          position: relative;
+          bottom: 9rem; } }
+      @media only screen and (max-height: 43.75em) {
+        .navigation--animated2 {
+          animation-play-state: paused;
+          position: relative;
+          bottom: 10rem; } }
+      @media only screen and (max-width: 75em) {
+        .navigation--animated2 {
+          animation-play-state: paused;
+          position: relative;
+          bottom: 10rem; } }
   .navigation ul {
     list-style: none; }
   .navigation__link:link, .navigation__link:visited {
@@ -430,9 +461,6 @@ footer {
     background-size: 220%;
     transition: all .4s;
     padding-left: 1rem; }
-    @media only screen and (max-width: 75em) {
-      .navigation__link:link, .navigation__link:visited {
-        display: none; } }
     .navigation__link:link:hover, .navigation__link:visited:hover {
       padding-left: 1rem; }
     .navigation__link:link span, .navigation__link:visited span {
@@ -467,11 +495,7 @@ footer {
         width: 18rem; } }
     @media only screen and (max-width: 75em) {
       .navigation__image {
-        height: 9rem;
-        width: 9rem;
-        float: left;
-        position: relative;
-        bottom: 15px; } }
+        margin-top: 7rem; } }
     .navigation__image:hover {
       background-image: url(../../img/Alex-Johnson2-distort-sm2.png); }
   .navigation__footer-list--item {
@@ -498,77 +522,10 @@ footer {
       .navigation::after {
         content: "";
         display: block;
-        height: 1rem;
+        height: 1.6rem;
         width: 100%;
-        position: relative;
-        top: 8.8rem;
-        background: #000;
-        background-image: url(../../img/texture2.png); }
-      .navigation__nav {
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1500;
-        opacity: 0;
-        width: 0;
-        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-        .navigation__nav__list {
-          position: absolute;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          list-style: none;
-          text-align: center;
-          width: 100%; }
-        .navigation__nav__item {
-          margin: 1rem; }
-        .navigation__nav__link:link, .navigation__nav__link:visited {
-          display: inline-block;
-          font-size: 3rem;
-          font-weight: 300;
-          padding: 1rem 2rem;
-          color: #FFF;
-          text-decoration: none;
-          text-transform: uppercase;
-          background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #FFF 50%);
-          background-size: 220%;
-          transition: all .4s; }
-          .navigation__nav__link:link span, .navigation__nav__link:visited span {
-            margin-right: 1.5rem;
-            display: inline-block; }
-        .navigation__nav__link:hover, .navigation__nav__linkactive {
-          background-position: 100%;
-          color: #D33E41;
-          transform: translateX(1rem); }
-        .navigation__nav .row {
-          margin-bottom: -1rem !important; }
-      .navigation__button {
-        background-color: #FFF;
-        height: 7rem;
-        width: 7rem;
-        border-radius: 50%;
-        position: fixed;
-        top: 3rem;
-        right: 5rem;
-        z-index: 2000;
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-        text-align: center;
-        cursor: pointer; }
-      .navigation footer {
-        display: none; } }
-  @media only screen and (max-height: 43.75em) {
-    .navigation {
-      height: 12rem;
-      width: 100%; }
-      .navigation::after {
-        content: "";
-        display: block;
-        height: 1rem;
-        width: 100%;
-        position: relative;
-        top: 8.8rem;
+        position: absolute;
+        top: 0rem;
         background: #000;
         background-image: url(../../img/texture2.png); }
       .navigation__nav {
@@ -666,6 +623,124 @@ footer {
       .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
         top: 0;
         transform: rotate(-135deg); } }
+  @media only screen and (max-height: 43.75em) {
+    .navigation {
+      height: 12rem;
+      width: 100%; }
+      .navigation::after {
+        content: "";
+        display: block;
+        height: 1.6rem;
+        width: 100%;
+        position: absolute;
+        top: 0rem;
+        background: #000;
+        background-image: url(../../img/texture2.png); }
+      .navigation__nav {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1500;
+        opacity: 0;
+        width: 0;
+        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        .navigation__nav__list {
+          position: absolute;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          list-style: none;
+          text-align: center;
+          width: 100%; }
+        .navigation__nav__item {
+          margin: 1rem; }
+        .navigation__nav__link:link, .navigation__nav__link:visited {
+          display: inline-block;
+          font-size: 3rem;
+          font-weight: 300;
+          padding: 1rem 2rem;
+          color: #FFF;
+          text-decoration: none;
+          text-transform: uppercase;
+          background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #FFF 50%);
+          background-size: 220%;
+          transition: all .4s; }
+          .navigation__nav__link:link span, .navigation__nav__link:visited span {
+            margin-right: 1.5rem;
+            display: inline-block; }
+        .navigation__nav__link:hover, .navigation__nav__linkactive {
+          background-position: 100%;
+          color: #D33E41;
+          transform: translateX(1rem); }
+        .navigation__nav .row {
+          margin-bottom: -1rem !important; }
+      .navigation__button {
+        background-color: #FFF;
+        height: 7rem;
+        width: 7rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 3rem;
+        right: 5rem;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+        text-align: center;
+        cursor: pointer; }
+      .navigation footer {
+        display: none; }
+      .navigation__checkbox:checked ~ .navigation__background {
+        transform: scale(80);
+        background-image: linear-gradient(to bottom, rgba(228, 66, 69, 0.6), rgba(228, 66, 69, 0.6)), url(../../img/congruent_outline.png);
+        background-repeat: repeat; }
+      .navigation__checkbox:checked ~ .navigation__nav {
+        opacity: 1;
+        width: 100%; }
+      .navigation__checkbox:checked ~ nav {
+        text-align: center;
+        height: 100vh; }
+        .navigation__checkbox:checked ~ nav footer {
+          display: block; }
+      .navigation__icon {
+        position: relative;
+        margin-top: 3.5rem; }
+        .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+          width: 3rem;
+          height: 2px;
+          background-color: #231E20;
+          display: inline-block;
+          transition: all .2s; }
+        .navigation__icon::before, .navigation__icon::after {
+          content: "";
+          position: absolute;
+          left: 0; }
+        .navigation__icon::before {
+          top: -.8rem; }
+        .navigation__icon::after {
+          top: .8rem; }
+      .navigation__button:hover .navigation__icon::before {
+        top: -1rem; }
+      .navigation__button:hover .navigation__icon::after {
+        top: 1rem; }
+      .navigation__checkbox:checked + .navigation__button .navigation__icon {
+        background-color: transparent; }
+      .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+        top: 0;
+        transform: rotate(135deg); }
+      .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+        top: 0;
+        transform: rotate(-135deg); } }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__image {
+      width: 15rem;
+      height: 15rem;
+      margin: 2rem autp 1rem; }
+    .navigation .row [class^="col-"]:not(:last-child) {
+      margin-bottom: 0; } }
+  @media only screen and (max-height: 25em) {
+    .navigation .row [class^="col-"]:not(:last-child) {
+      margin-bottom: 0; } }
 
 .row {
   max-width: 114rem;

@@ -47,7 +47,10 @@ ORDER: Base + typography > general layout + grid > page layout > components
         @media only screen and (min-width: 112.5em) { @content };    //1800
     }
 
-    @if $breakpoint == max-height {
+    @if $breakpoint == med-height {
         @media only screen and (max-height: 43.75em) { @content };    //1800
+    }
+    @if $breakpoint == small-height {
+        @media only screen and (max-height: 25em) { @content };    //1800
     }
 }

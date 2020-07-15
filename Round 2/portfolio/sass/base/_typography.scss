@@ -99,10 +99,7 @@ a {
         @include respond(desktop){
             margin-top: 2rem;;
          }
-        @include respond(tab-land){ 
-            @include absCenter;
-            top: 15rem;
-        }
+        
 
         &--main{
             display: block;

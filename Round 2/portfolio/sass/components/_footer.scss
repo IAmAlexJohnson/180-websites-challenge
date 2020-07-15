@@ -9,6 +9,9 @@ footer {
          @include respond(tab-land){ 
             margin-left: 0%;
          }
+         @include respond(med-height){ 
+            margin-left: 0%;
+         }
         &--item {
             display: inline;
         }
