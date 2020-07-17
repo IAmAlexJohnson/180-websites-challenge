@@ -1,0 +1,465 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // This defines what 1rem is
+    font-size: 62.5%; //1 rem = 10px; 10/16 = 62.5%
+
+    @include respond(big-desktop){
+        font-size: 75%; // 1 rem = 12px; 12/16
+    }
+
+    @include respond(tab-land){ //width < 1200?
+        font-size: 56.25%; // 1 rem = 8px; 8/16 = 50%
+    }
+
+    @include respond(tab-port){ //width < 900?
+        font-size: 50%;
+    }
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    position: relative;
+    z-index: 999;
+    font-size: 1.6rem;
+    padding: 5rem;
+}
+
+.form {
+    padding: 8rem 0rem 3rem;
+
+    @include respond(tab-land){ 
+        padding: 8rem 5rem 3rem;
+    }
+
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &__input {
+        font-size: 1.6rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 1.5rem 1rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 90%;
+        display: block;
+        transition: all .3s;
+
+        @include respond(tab-land) {
+            width: 95%;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-primary;
+        }
+
+        &:focus:invalid {
+            border-bottom: 3px solid red;
+        }
+
+        &::-webkit-input-placeholder {
+            color: #333;
+        }
+    }
+
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+        margin-left: 2rem;
+        @include respond(tab-land) {
+            margin-left: 2rem;
+        }
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+
+    &__checkbox-group {
+        width: 100%;
+        display: inline-block;
+    }
+
+    &__checkbox-input {
+        display: none;
+    }
+    
+    &__checkbox-label {
+        font-size: 1.4rem;
+        cursor: pointer;
+        position: relative;
+        padding-left: 2rem;
+    }
+
+    &__checkbox-button {
+        height: .5rem;
+        width: .5rem;
+        border: 2px solid $color-secondary;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: .4rem;
+
+        &::after {
+            content: "";
+            display: block;
+            height: .3rem;
+            width: .3rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-secondary;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+
+    &__checkbox-input:checked ~ &__checkbox-label &__checkbox-button::after {
+        opacity: 1;
+    }
+}
+
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .8);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    @include respond(sm-height){ 
+        position: absolute;
+        padding-bottom: 30rem;
+        @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            background-color: rgba($color-black, .3);
+        }
+    }
+
+    
+
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .3);
+    }
+
+    &__content {
+        @include absCenter;
+
+        width: 50%;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        border-radius: 3px;
+        display: table;
+        overflow: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.25);
+        transition: all .5s .2s;
+
+        @include respond(tab-land){ 
+            width: 70%;
+        }
+    }
+
+    &__left {
+        width: 33.333333%;
+        display: table-cell;
+        background-color: #cff6fd;
+        padding: 0 3rem;
+        @include respond(tab-land){ 
+            display: block;
+            width: 100%;
+            padding: 0;
+        }
+    }
+
+    &__right {
+        .paragraph {
+            @include respond(tab-land){ 
+                width: 70%;
+                margin:  1.6rem auto;
+            }
+        }
+        width: 66.6666667%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+        margin: 0 auto;
+        @include respond(tab-land){ 
+            display: block;
+            width: 100%;
+            padding: 3rem 0;
+        }
+    }
+
+    &__create-account {
+        opacity: 0;
+        visibility: hidden;
+
+        &:target {
+            opacity: 1;
+            visibility: visible;
+        }
+        &.form {
+            width: 50%;
+            padding: 5rem;
+            @include respond(tab-land){ 
+                padding: 8rem 5rem 3rem;
+            }
+        }
+
+        .form__input {
+            width: 40%;
+            margin: 0 auto;
+            background-color: rgba($color-black, .03);
+            @include respond(tab-land) {
+                width: 95%;
+            }
+        }
+        .btn {
+            @include respond(tab-land) {
+                width: 95%;
+            }
+        }
+    }
+
+     //Open states
+     &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-secondary;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
+
+.paragraph {
+    margin: 1.6rem 0;
+}
+
+.or {
+    margin: 2rem 0;
+    font-weight: 900;
+}
+
+.btn {
+    font-size: 1.6rem;
+    font-family: inherit;
+    height: 40px;
+    display: block;
+    text-decoration: none;
+    color: $color-white;
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+
+    &:hover {
+        cursor: pointer;
+        opacity: .9;
+    }
+    &--full {
+        width: 100%;
+        line-height: 2;
+    }
+    &--lg {
+        width: 60%;
+        line-height: 2;
+    }
+    &--sm {
+        width: 40%;
+        line-height: 2;
+    }
+    &--login{
+        width: 100px;
+        height: 40px;
+        background-color: $color-primary;
+        border-radius: 5px;
+        position: relative;
+        top: 1rem;
+        line-height: 40px;
+        text-align: center;
+        box-shadow: 5px 5px 1px rgba($color: $color-black, $alpha: .1);
+
+        &:hover {
+            background-color: lighten($color-primary, 10%) !important;
+            color: #FFF !important;
+            box-shadow: 5px 5px 1px rgba($color: $color-black, $alpha: .2);
+        }
+        &:active {
+            position: relative;
+            top:1.1rem;
+        }
+        
+    }
+
+    @include respond(tab-land){ 
+        &--full {
+            line-height: 3;
+        }
+        &--lg {
+            line-height: 3;
+        }
+        &--sm {
+            line-height: 2;
+        }
+    }
+    &--facebook {
+        background-color: rgb(59, 89, 152);
+    }
+    &--twitter {
+        background-color: rgb(29, 161, 242);
+    }
+    &--github {
+        background-color: #24292E;
+    }
+    &--create {
+        background-color: rgb(59, 152, 95);
+    }
+    &--blue {
+        background-color: rgb(45, 112, 129);
+    }
+    &--red {
+        background-color: rgb(172, 20, 20);
+    }
+}
+
+
+h2 {
+    margin-bottom: 1.6rem;
+}
+
+
+.navigation {
+    width: 100%;
+    height: 100px;
+    background: darken($color: $color-primary, $amount: 20%);
+    box-shadow: 5px 5px 1px rgba($color: $color-black, $alpha: .2);
+    color: #FFF;
+    font-size: 1.6rem;
+
+    .logo{
+        height: 90%;
+        float:left;
+        margin-left: 20px;
+        &__text {
+            text-transform: uppercase;
+            line-height: 100px;
+            font-size: 4rem;
+            
+            
+            -webkit-transform: skew(-5deg, -5deg) rotate(5deg);
+            transform: skew(-5deg, -5deg) rotate(5deg);
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+            text-shadow: 1px 1px darken(#FFF, 30%), 2px 2px darken(#FFF, 30%), 3px 3px darken(#FFF, 30%),
+              4px 4px darken(#FFF, 30%), 5px 5px darken(#FFF, 30%), 6px 6px darken(#FFF, 30%), 7px 7px darken(#FFF, 30%),
+              8px 8px darken(#FFF, 60%), 9px 9px darken(#FFF, 60%), 10px 10px darken(#FFF, 60%),
+              11px 11px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+    }
+
+    &__list{
+        list-style: none;
+        margin-right: 5rem;
+        line-height: 65px;
+        margin-top: 20px;
+        float:right;
+        a{
+            color: #FFF;
+            &:hover {
+                color: darken(#FFF, 30%);
+            }
+        }
+        &--item{
+            float:left;
+            margin: 0 1.6rem;
+            
+        }
+    }
+}
+
+.img-div {
+    max-width: 400px;
+
+    img {
+        width: 100%;
+    }
+}
+
+
+.footer {
+        width: 100%;
+        height: 100px;
+        background: darken($color: $color-primary, $amount: 20%);
+        box-shadow: 5px 5px 1px rgba($color: $color-black, $alpha: .2);
+        color: #FFF;
+        font-size: 1.6rem;
+
+        &__list{
+            list-style: none;
+            margin-right: 5rem;
+            line-height: 100px;
+            float:right;
+            
+
+            &--item{
+                float:left;
+                margin: 0 1.6rem;
+                a{
+                    color: #FFF;
+                    text-decoration: none;
+                    &:hover {
+                        color: darken(#FFF, 30%);
+                    }
+                }
+            }
+        }
+}
